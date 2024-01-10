@@ -31,14 +31,20 @@
 	
 	<button id="btn">Click me!</button>
 	<input type= "text" id="box">
+	<div id="reset">
+		<h3>Shay made a change here:</h3>
+		<button id="btn2">Click to reset</button>
+	</div>
 	
 	<script>
 		
 	let btn = document.getElementById("btn");
 	let box = document.getElementById("box");
+	let resetBtn = document.getElementById("btn2");
 	let colorRed = 255;    // initialize the red channel to pure red
-
+	
 	btn.addEventListener("click", clickHandler, false);
+	resetBtn.addEventListener("click", resetColor);
 		
 	function clickHandler() {
 		// first color channel (red) gets darker every time button is clicked
@@ -46,7 +52,10 @@
 
 		// ES6 equivalent using template string
 		//box.style.backgroundColor = `rgb( ${colorRed-=10}, 0, 0 )`;	
-	}	
+	};
+	function resetColor() {
+		window.location.reload();
+	};
 		
 	</script>
 </body>
